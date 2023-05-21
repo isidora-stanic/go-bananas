@@ -123,101 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &403771997
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1521162399598738512, guid: 1a0ea4c5927dfa2438aefbcea0e41bd6,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.0544918
-      objectReference: {fileID: 0}
-    - target: {fileID: 1521162399598738512, guid: 1a0ea4c5927dfa2438aefbcea0e41bd6,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -7.0193357
-      objectReference: {fileID: 0}
-    - target: {fileID: 6084637109818328412, guid: 1a0ea4c5927dfa2438aefbcea0e41bd6,
-        type: 3}
-      propertyPath: GroundLayers.m_Bits
-      value: 2569
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583195256146976776, guid: 1a0ea4c5927dfa2438aefbcea0e41bd6,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583195256146976776, guid: 1a0ea4c5927dfa2438aefbcea0e41bd6,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.2544918
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583195256146976776, guid: 1a0ea4c5927dfa2438aefbcea0e41bd6,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.2609199
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583195256146976776, guid: 1a0ea4c5927dfa2438aefbcea0e41bd6,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583195256146976776, guid: 1a0ea4c5927dfa2438aefbcea0e41bd6,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583195256146976776, guid: 1a0ea4c5927dfa2438aefbcea0e41bd6,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583195256146976776, guid: 1a0ea4c5927dfa2438aefbcea0e41bd6,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583195256146976776, guid: 1a0ea4c5927dfa2438aefbcea0e41bd6,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583195256146976776, guid: 1a0ea4c5927dfa2438aefbcea0e41bd6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583195256146976776, guid: 1a0ea4c5927dfa2438aefbcea0e41bd6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583195256146976776, guid: 1a0ea4c5927dfa2438aefbcea0e41bd6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583195256146976783, guid: 1a0ea4c5927dfa2438aefbcea0e41bd6,
-        type: 3}
-      propertyPath: m_Name
-      value: NanaBoy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8467203116313696127, guid: 1a0ea4c5927dfa2438aefbcea0e41bd6,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.0544918
-      objectReference: {fileID: 0}
-    - target: {fileID: 8467203116313696127, guid: 1a0ea4c5927dfa2438aefbcea0e41bd6,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -7.0193357
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 710167201795802512, guid: 1a0ea4c5927dfa2438aefbcea0e41bd6, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 1a0ea4c5927dfa2438aefbcea0e41bd6, type: 3}
 --- !u!1 &943518621
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,6 +221,85 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1659694537
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.2544918
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2609199
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181629, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_Name
+      value: NanaBoy can shoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017036745365457869, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.0193357
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278770874690904290, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.0193357
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4aa4595ec5956ea44aeec6de8bc72aaf, type: 3}
 --- !u!1 &2077367545
 GameObject:
   m_ObjectHideFlags: 0
