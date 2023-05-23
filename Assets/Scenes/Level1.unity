@@ -221,85 +221,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1659694537
+--- !u!1001 &1596114514
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+    - target: {fileID: 4368449498499668105, guid: fdf900f376b61a64491763cc2fc8b82c,
         type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+    - target: {fileID: 4368449498499668105, guid: fdf900f376b61a64491763cc2fc8b82c,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.2544918
       objectReference: {fileID: 0}
-    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+    - target: {fileID: 4368449498499668105, guid: fdf900f376b61a64491763cc2fc8b82c,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.2609199
       objectReference: {fileID: 0}
-    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+    - target: {fileID: 4368449498499668105, guid: fdf900f376b61a64491763cc2fc8b82c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.37
+      value: 3.0193355
       objectReference: {fileID: 0}
-    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+    - target: {fileID: 4368449498499668105, guid: fdf900f376b61a64491763cc2fc8b82c,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+    - target: {fileID: 4368449498499668105, guid: fdf900f376b61a64491763cc2fc8b82c,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+    - target: {fileID: 4368449498499668105, guid: fdf900f376b61a64491763cc2fc8b82c,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+    - target: {fileID: 4368449498499668105, guid: fdf900f376b61a64491763cc2fc8b82c,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+    - target: {fileID: 4368449498499668105, guid: fdf900f376b61a64491763cc2fc8b82c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+    - target: {fileID: 4368449498499668105, guid: fdf900f376b61a64491763cc2fc8b82c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+    - target: {fileID: 4368449498499668105, guid: fdf900f376b61a64491763cc2fc8b82c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3099046180661181629, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+    - target: {fileID: 4368449498499668110, guid: fdf900f376b61a64491763cc2fc8b82c,
         type: 3}
       propertyPath: m_Name
-      value: NanaBoy can shoot
-      objectReference: {fileID: 0}
-    - target: {fileID: 4017036745365457869, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -7.0193357
-      objectReference: {fileID: 0}
-    - target: {fileID: 6278770874690904290, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -7.0193357
+      value: NanaBoy can kick and shoot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4aa4595ec5956ea44aeec6de8bc72aaf, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: fdf900f376b61a64491763cc2fc8b82c, type: 3}
 --- !u!1 &2077367545
 GameObject:
   m_ObjectHideFlags: 0

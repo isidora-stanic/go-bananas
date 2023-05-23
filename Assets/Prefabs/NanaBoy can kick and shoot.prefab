@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1701762217555878963
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3099046178765378715, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: CameraDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046178765378715, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: ShoulderOffset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.2544918
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2609199
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.0193355
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181626, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180661181629, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_Name
+      value: NanaBoy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180712455805, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180712455805, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.854
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099046180712455805, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.599
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4aa4595ec5956ea44aeec6de8bc72aaf, type: 3}
+--- !u!1 &131672506183368150 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1607244975507495397, guid: 4aa4595ec5956ea44aeec6de8bc72aaf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1701762217555878963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4416926083347132241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131672506183368150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db635df3b82d89046bc43506ed67ff1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kickDamage: 30
+  kickRadius: 1
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 2048

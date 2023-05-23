@@ -32,8 +32,10 @@ public class HealthController : MonoBehaviour
     {
         if (indestructable) return;
         health -= damage;
+        Debug.Log("OUCH");
         if (health <= 0f)
         {
+            health = 0f; // so it does not display negative value
             Die();
         }
         if (characterType == TypeOfCharacter.Main)

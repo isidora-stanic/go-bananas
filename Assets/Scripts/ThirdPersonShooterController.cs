@@ -16,29 +16,29 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private Transform spawnBulletPosition;
     [SerializeField] private GameObject crosshairCanvas;
 
-    // TODO: play animation for shooting
-    // private Animator _animator;
-    // private bool _hasAnimator;
-    // private int _animIDShoot;
+    private Animator animator;
+    private int animIDShoot;
 
     private StarterAssetsInputs starterAssetsInputs;
     private ThirdPersonController thirdPersonController;
+
+    private Vector3 mouseWorldPosition = Vector3.zero;
 
     private void Awake()
     {
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
         thirdPersonController = GetComponent<ThirdPersonController>();
+        animator = GetComponent<Animator>();
     }
 
     void Start()
     {
-        // _hasAnimator = TryGetComponent(out _animator);
-        // AssignAnimationIDs();
+        AssignAnimationIDs();
     }
 
     void Update()
     {
-        Vector3 mouseWorldPosition = Vector3.zero;
+        mouseWorldPosition = Vector3.zero;
         // raycast so i can see the target point
         // if I shoot at the sky there will be no sphere casted because there is no collider
         // solution to this is to TODO:(on actual level scene) create invisible walls (cubes but dissabled mesh renderer) so we can have colliders everywhere
@@ -56,34 +56,59 @@ public class ThirdPersonShooterController : MonoBehaviour
             aimVirtualCamera.gameObject.SetActive(true);
             thirdPersonController.SetSensitivity(aimSensitivity);
             thirdPersonController.SetRotateOnMove(false); // stops rotation of a character in motion while we move
+            animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 1f, Time.deltaTime * 10f)); // start animation gradualy
 
             // for rotating character towards the aim
             Vector3 worldAimTarget = mouseWorldPosition;
             worldAimTarget.y = transform.position.y;
             Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
             transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f); // smooth rotation
+
+
+            // SHOOT
+            // TODO: consider allowing shooting only while aiming
+            if (starterAssetsInputs.shoot)
+            {
+                
+                animator.SetBool(animIDShoot, true);
+            }
+            
         } else
         {
             crosshairCanvas.SetActive(false);
             aimVirtualCamera.gameObject.SetActive(false);
             thirdPersonController.SetSensitivity(normalSensitivity);
             thirdPersonController.SetRotateOnMove(true); // allows rotation of a character in motion while we move
+            animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f)); // stop animation gradualy
         }
 
-        // SHOOT
-        if (starterAssetsInputs.shoot)
-        {
-            Debug.Log("SHOOT: " + mouseWorldPosition + ", " + spawnBulletPosition.position);
-            Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
-            Instantiate(prefabBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
-            starterAssetsInputs.shoot = false;
-        }
+        
         
     }
 
-    // TODO: play animation for shooting
-    // private void AssignAnimationIDs()
-    // {
-    //     _animIDShoot = Animator.StringToHash("Shoot");
-    // }
+    private void AssignAnimationIDs()
+    {
+        animIDShoot = Animator.StringToHash("Shoot");
+    }
+
+    private int i = 0;
+
+    // Animation Event in metarig|shoot-coconuts so the projectile waits for the animation to finish
+    public void FiredEvent(string s)
+    {
+        if (i % 2 == 1) 
+        {
+            Debug.Log("DUPLICATE FiredEvent: " + s + " called at: " + Time.time);
+            animator.SetBool(animIDShoot, false);
+        } else
+        {
+            Debug.Log("FiredEvent: " + s + " called at: " + Time.time);
+            Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+            Instantiate(prefabBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+            Debug.Log("SHOOT: " + mouseWorldPosition + ", " + spawnBulletPosition.position);
+        }
+        starterAssetsInputs.shoot = false;
+        animator.SetBool(animIDShoot, false);
+        i++;
+    }
 }

@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9767e6ebf62a2224bad205dd0e5cce2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullteSpeed: 80
+  bullteSpeed: 50
   autoDestructionTimeAfterHit: 0.3
   projectileDamage: 40
   enemyLayer:

@@ -30,7 +30,7 @@ public class BulletProjectile : MonoBehaviour
     {
         foreach (ContactPoint contact in collision.contacts)
         {
-            Debug.Log("contact info: " + contact.point + " " + contact.normal);
+            // Debug.Log("contact info: " + contact.point + " " + contact.normal);
         }
         // Debug.Log("first: " + collision.collider + ", second: " + collision.collider);
         // Debug.Log("second layer: " + collision.collider.gameObject.layer);

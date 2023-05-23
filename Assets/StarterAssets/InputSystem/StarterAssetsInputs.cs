@@ -16,6 +16,8 @@ namespace StarterAssets
 		public bool aim;
 		// SHOOT
 		public bool shoot;
+		// KICK
+		public bool kick;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -57,6 +59,11 @@ namespace StarterAssets
 		{
 			ShootInput(value.isPressed);
 		}
+		// KICK
+		public void OnKick(InputValue value)
+		{
+			KickInput(value.isPressed);
+		}
 #endif
 
 
@@ -88,6 +95,11 @@ namespace StarterAssets
 		public void ShootInput(bool newShootState)
 		{
 			shoot = newShootState;
+		}
+		// KICK
+		public void KickInput(bool newKickState)
+		{
+			kick = newKickState;
 		}
 
 		private void OnApplicationFocus(bool hasFocus)
