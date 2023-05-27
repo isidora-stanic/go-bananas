@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - CinemachineTarget
+  - Coconut
+  - BananaPeel
+  - WhipCream
+  - Bolt
+  - Coin
   layers:
   - Default
   - TransparentFX
