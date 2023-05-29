@@ -6,6 +6,8 @@ public class BasicRigidBodyPush : MonoBehaviour
 	public bool canPush;
 	[Range(0.5f, 5f)] public float strength = 1.1f;
 
+	public AudioClip RockRollSoundClip;
+
 	private void OnControllerColliderHit(ControllerColliderHit hit)
 	{
 		if (canPush) PushRigidBodies(hit);
@@ -31,5 +33,22 @@ public class BasicRigidBodyPush : MonoBehaviour
 
 		// Apply the push and take strength into account
 		body.AddForce(pushDir * strength, ForceMode.Impulse);
+
+		if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Rock"))
+		{
+			PlayIfAudioManager(RockRollSoundClip);
+		}
+	}
+
+	public void PlayIfAudioManager(AudioClip clip)
+	{
+		try 
+			{
+				AudioManager.Instance.PlaySound(clip);
+			} 
+		catch 
+			{
+				Debug.Log("There is no audio manager");
+			}
 	}
 }

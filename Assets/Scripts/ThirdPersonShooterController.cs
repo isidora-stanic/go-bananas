@@ -21,6 +21,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 
     private StarterAssetsInputs starterAssetsInputs;
     private ThirdPersonController thirdPersonController;
+    private CollectingController collectingController;
 
     private Vector3 mouseWorldPosition = Vector3.zero;
 
@@ -29,6 +30,8 @@ public class ThirdPersonShooterController : MonoBehaviour
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
         thirdPersonController = GetComponent<ThirdPersonController>();
         animator = GetComponent<Animator>();
+
+        collectingController = GetComponent<CollectingController>();
     }
 
     void Start()
@@ -67,7 +70,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 
             // SHOOT
             // TODO: consider allowing shooting only while aiming
-            if (starterAssetsInputs.shoot)
+            if (starterAssetsInputs.shoot && collectingController.CoconutCount > 0)
             {
                 
                 animator.SetBool(animIDShoot, true);
@@ -106,6 +109,8 @@ public class ThirdPersonShooterController : MonoBehaviour
             Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
             Instantiate(prefabBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
             Debug.Log("SHOOT: " + mouseWorldPosition + ", " + spawnBulletPosition.position);
+            collectingController.CoconutCount -= 1;
+            Debug.Log("Remaining coconuts: " + collectingController.CoconutCount);
         }
         starterAssetsInputs.shoot = false;
         animator.SetBool(animIDShoot, false);

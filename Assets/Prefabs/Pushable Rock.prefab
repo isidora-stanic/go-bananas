@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2314272541757909070, guid: c8a2815ff94c8cf4c817008d9af097ad,
+        type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.7982018
+      objectReference: {fileID: 0}
     - target: {fileID: 3559844359691677926, guid: c8a2815ff94c8cf4c817008d9af097ad,
         type: 3}
       propertyPath: m_Layer

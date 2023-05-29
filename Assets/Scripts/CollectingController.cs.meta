@@ -3,7 +3,12 @@ guid: 626996841ad5f1a47b1c2d20f941118c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - coconutSound: {fileID: 8300000, guid: 3b8f063209005e543a9bcf0523e2fa21, type: 3}
+  - bananaPeelSound: {fileID: 8300000, guid: 3b8f063209005e543a9bcf0523e2fa21, type: 3}
+  - boltSound: {fileID: 8300000, guid: 3b8f063209005e543a9bcf0523e2fa21, type: 3}
+  - whipCreamSound: {fileID: 8300000, guid: 3b8f063209005e543a9bcf0523e2fa21, type: 3}
+  - coinSound: {fileID: 8300000, guid: 3b8f063209005e543a9bcf0523e2fa21, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

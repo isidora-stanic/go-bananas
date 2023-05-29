@@ -396,7 +396,9 @@ namespace StarterAssets
                 if (FootstepAudioClips.Length > 0)
                 {
                     var index = Random.Range(0, FootstepAudioClips.Length);
-                    AudioSource.PlayClipAtPoint(FootstepAudioClips[index], transform.TransformPoint(_controller.center), FootstepAudioVolume);
+                    // AudioSource.PlayClipAtPoint(FootstepAudioClips[index], transform.TransformPoint(_controller.center), FootstepAudioVolume);
+                    //AudioManager.Instance.PlaySound(FootstepAudioClips[index]);
+                    PlayIfAudioManager(FootstepAudioClips[index]);
                 }
             }
         }
@@ -405,8 +407,22 @@ namespace StarterAssets
         {
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
-                AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
+                // AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
+                //AudioManager.Instance.PlaySound(LandingAudioClip);
+                PlayIfAudioManager(LandingAudioClip);
             }
+        }
+
+        public void PlayIfAudioManager(AudioClip clip)
+        {
+            try 
+                {
+                    AudioManager.Instance.PlaySound(clip);
+                } 
+            catch 
+                {
+                    Debug.Log("There is no audio manager");
+                }
         }
     }
 }
