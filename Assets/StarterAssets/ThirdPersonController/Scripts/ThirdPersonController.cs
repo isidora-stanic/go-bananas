@@ -20,6 +20,12 @@ namespace StarterAssets
 
         [Tooltip("Sprint speed of the character in m/s")]
         public float SprintSpeed = 5.335f;
+        
+        [Tooltip("Super speed of the character in m/s")]
+        public float SuperSpeed = 15f;
+
+        [Tooltip("How long will the character be super fast")]
+        public float superFastTime = 20f;
 
         [Tooltip("How fast the character turns to face movement direction")]
         [Range(0.0f, 0.3f)]
@@ -89,6 +95,8 @@ namespace StarterAssets
         private float _rotationVelocity;
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
+
+        private bool superFast = false;
 
         // timeout deltatime
         private float _jumpTimeoutDelta;
@@ -220,7 +228,7 @@ namespace StarterAssets
         private void Move()
         {
             // set target speed based on move speed, sprint speed and if sprint is pressed
-            float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+            float targetSpeed = superFast ? SuperSpeed : _input.sprint ? SprintSpeed : MoveSpeed;
 
             // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
@@ -423,6 +431,17 @@ namespace StarterAssets
                 {
                     Debug.Log("There is no audio manager");
                 }
+        }
+
+        private void SetSuperFastFalse()
+        {
+            superFast = false;
+        }
+
+        public void BecomeSuperFast()
+        {
+            superFast = true;
+            Invoke("SetSuperFastFalse", superFastTime);
         }
     }
 }
