@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioManager : PersistentSingleton<AudioManager>
 {
     [SerializeField] private AudioSource musicAudioSource, effectsAudioSource;
-    public float masterVolume, musicVolume, sfxVolume;
+
+    [SerializeField] private Slider masterVolume;
+    [SerializeField] private Slider sfxVolume;
+    [SerializeField] private Slider musicVolume;
 
     public void PlaySound(AudioClip audioClip)
     {
@@ -61,22 +65,19 @@ public class AudioManager : PersistentSingleton<AudioManager>
         effectsAudioSource.mute = !effectsAudioSource.mute;
     }
 
-    public void ChangeMasterVolume(float volume)
+    public void ChangeMasterVolume()
     {
-        AudioListener.volume = volume;
-        masterVolume = volume;
+        AudioListener.volume = masterVolume.value;
     }
 
-    public void ChangeEffectsVolume(float volume)
+    public void ChangeEffectsVolume()
     {
-        effectsAudioSource.volume = volume;
-        sfxVolume = volume;
+        effectsAudioSource.volume = sfxVolume.value;
     }
 
-    public void ChangeMusicVolume(float volume)
+    public void ChangeMusicVolume()
     {
-        musicAudioSource.volume = volume;
-        musicVolume = volume;
+        musicAudioSource.volume = musicVolume.value;
     }
 
     public float CalculateVolumeForCollisionForce(float collisionForce, float forceThreshold)

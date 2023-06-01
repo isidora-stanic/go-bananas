@@ -53,7 +53,7 @@ public class ThirdPersonShooterController : MonoBehaviour
             mouseWorldPosition = raycastHit.point; // for rotating character towards the aim
         }
 
-        if (starterAssetsInputs.aim)
+        if (starterAssetsInputs.aim && Time.timeScale > 0f)
         {
             crosshairCanvas.SetActive(true);
             aimVirtualCamera.gameObject.SetActive(true);

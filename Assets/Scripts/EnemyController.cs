@@ -10,6 +10,13 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float speed = 0f;
     [SerializeField] private List<Transform> wayPoints;
 
+    [SerializeField] private float kickSpeed = 5f;
+    private float kickTimer = 0f;
+
+    [SerializeField] private float kickDamage = 20f;
+    [SerializeField] private float kickRadius = 40f;
+    [SerializeField] private LayerMask playerLayer;
+
     private int _nextPointIndex;
     private float _range = 1.0f;
 
@@ -17,12 +24,6 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
             _nextPointIndex = 0;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // Move();
     }
 
     private void Move()
@@ -38,5 +39,33 @@ public class EnemyController : MonoBehaviour
                 _nextPointIndex = 0;
             }
         }
+    }
+
+    void Update()
+    {
+        //currently does not move
+
+        // KICK
+        if (kickTimer <= 0)
+        {
+            // Debug.Log("KICKED SOMETHING!");
+            Collider[] hitPlayers = Physics.OverlapSphere(enemyMesh.position, kickRadius, playerLayer);
+            foreach (Collider player in hitPlayers)
+            {
+                HealthController playerController = player.GetComponent<HealthController>();
+                Debug.Log("Kicking the player: " + player + " " + playerController);
+                if (playerController != null)
+                {
+                    playerController.TakeDamage(kickDamage);
+                }
+            }
+            kickTimer = kickSpeed;
+        }
+        else
+        {
+            kickTimer -= Time.deltaTime;
+            // Debug.Log("NOT KICKING! " + kickTimer);
+        }
+
     }
 }

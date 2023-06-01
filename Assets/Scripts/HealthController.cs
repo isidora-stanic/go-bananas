@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Class <c>HealthController</c> manages health, healing, taking damage and diying of a character.
@@ -18,7 +19,8 @@ public class HealthController : MonoBehaviour
 
     [Header("Special indicators")]
     [SerializeField] private TypeOfCharacter characterType;
-    [SerializeField] private bool indestructable;
+    [SerializeField] private bool indestructible;
+    [SerializeField] private float indestructibleTime = 20f;
     private bool isDead = false;
     public bool IsDead { get { return isDead; } } // another class can only get this value
 
@@ -30,7 +32,7 @@ public class HealthController : MonoBehaviour
     /// </summary>
     public void TakeDamage(float damage)
     {
-        if (indestructable) return;
+        if (indestructible) return;
         health -= damage;
         Debug.Log("OUCH");
         if (health <= 0f)
@@ -57,7 +59,7 @@ public class HealthController : MonoBehaviour
             Debug.Log("Enemy just died.");
         else Debug.Log("Side character just died.");
 
-        Destroy(gameObject); // TODO: consider only seting active to false for performance reasosns
+        gameObject.SetActive(false);
         // some kind of restart
     }
 
@@ -83,5 +85,41 @@ public class HealthController : MonoBehaviour
     void Start()
     {
         StartCoroutine(Heal());
+    }
+
+    // /// <summary>
+    // /// Method <c>Indestructible</c> makes a character indestructible, for indestructible time.
+    // /// </summary>
+    // private IEnumerator Indestructible()
+    // {
+    //     if (!isDead)
+    //     {
+    //         indestructible = true;
+    //         Debug.Log("Im immortal! " + indestructible);
+    //         yield return new WaitForSeconds(indestructibleTime);
+    //         indestructible = false;
+    //         Debug.Log("Im immortal! " + indestructible);
+    //     }
+    // }
+
+    private void SetIndestructibleFalse()
+    {
+        indestructible = false;
+    }
+
+
+    /// <summary>
+    /// Method <c>Start</c> starts a coroutine for indestructible player.
+    /// </summary>
+    public void BecomeIndestructible()
+    {
+        // StartCoroutine(Indestructible());
+        if (!isDead)
+        {
+            indestructible = true;
+            Debug.Log("Im immortal! " + indestructible);
+            Invoke("SetIndestructibleFalse", indestructibleTime);
+            Debug.Log("Im not immortal! " + !indestructible);
+        }
     }
 }

@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CollectingController : MonoBehaviour
 {
     [SerializeField] private int coconutsCount = 0;
     [SerializeField] private int bananaPeelCount = 0;
+    [SerializeField] private int coinCount = 0;
 
     private bool hasAudio;
     [SerializeField] private AudioClip coconutSound, bananaPeelSound, boltSound, whipCreamSound, coinSound;
@@ -15,14 +17,24 @@ public class CollectingController : MonoBehaviour
         set { coconutsCount = value; }
      }
     public int BananaPeelCount { get { return bananaPeelCount; } }
+    public int CoinCount { get { return coinCount; } }
 
+    private HealthController healthController;
+    private StarterAssets.ThirdPersonController moveController;
 
-    // TODO: think what each of this collectables will do for a player?
+    public TMP_Text coconutText, bananaPeelText, coinText;
+    void Start()
+    {
+        healthController = gameObject.GetComponent<HealthController>();
+        moveController = gameObject.GetComponent<StarterAssets.ThirdPersonController>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Coconut"))
         {
             coconutsCount++;
+            coconutText.SetText("Coconuts: " + coconutsCount);
             other.gameObject.SetActive(false);
             Debug.Log("Collected a Coconut!");
             AudioManager.Instance.PlaySound(coconutSound);
@@ -30,6 +42,7 @@ public class CollectingController : MonoBehaviour
         } else if (other.gameObject.CompareTag("BananaPeel"))
         {
             bananaPeelCount++;
+            bananaPeelText.SetText("Banana peels: " + bananaPeelCount);
             other.gameObject.SetActive(false);
             Debug.Log("Collected a Banana Peel!");
             PlayIfAudioManager(bananaPeelSound);
@@ -37,21 +50,22 @@ public class CollectingController : MonoBehaviour
 
         } else if (other.gameObject.CompareTag("WhipCream"))
         {
-            // StartCoroutine(Indestructable());
+            healthController.BecomeIndestructible();
             other.gameObject.SetActive(false);
             Debug.Log("Collected a WhipCream!");
             PlayIfAudioManager(whipCreamSound);
 
         } else if (other.gameObject.CompareTag("Bolt"))
         {
-            // StartCoroutine(SuperFast()); // TODO: consider it to make you a tiny bit faster if you collect x number of bolts instead of super speed?
+            moveController.BecomeSuperFast();
             other.gameObject.SetActive(false);
             Debug.Log("Collected a Bolt!");
             PlayIfAudioManager(boltSound);
 
         } else if (other.gameObject.CompareTag("Coin"))
         {
-            // coin++? TODO: consider if you need this or something to make you stronger or faster?
+            coinCount++;
+            coinText.SetText("Coins: " + coinCount);
             other.gameObject.SetActive(false);
             Debug.Log("Collected a Coin!");
             PlayIfAudioManager(coinSound);
