@@ -29,12 +29,18 @@ public class CollectingController : MonoBehaviour
         moveController = gameObject.GetComponent<StarterAssets.ThirdPersonController>();
     }
 
+    void Update()
+    {
+        coconutText.SetText(""+coconutsCount);
+        bananaPeelText.SetText(""+bananaPeelCount);
+        coinText.SetText(""+coinCount);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Coconut"))
         {
             coconutsCount++;
-            coconutText.SetText("Coconuts: " + coconutsCount);
             other.gameObject.SetActive(false);
             Debug.Log("Collected a Coconut!");
             AudioManager.Instance.PlaySound(coconutSound);
@@ -42,7 +48,7 @@ public class CollectingController : MonoBehaviour
         } else if (other.gameObject.CompareTag("BananaPeel"))
         {
             bananaPeelCount++;
-            bananaPeelText.SetText("Banana peels: " + bananaPeelCount);
+            
             other.gameObject.SetActive(false);
             Debug.Log("Collected a Banana Peel!");
             PlayIfAudioManager(bananaPeelSound);
@@ -65,7 +71,6 @@ public class CollectingController : MonoBehaviour
         } else if (other.gameObject.CompareTag("Coin"))
         {
             coinCount++;
-            coinText.SetText("Coins: " + coinCount);
             other.gameObject.SetActive(false);
             Debug.Log("Collected a Coin!");
             PlayIfAudioManager(coinSound);
