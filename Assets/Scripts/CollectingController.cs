@@ -43,7 +43,7 @@ public class CollectingController : MonoBehaviour
             coconutsCount++;
             other.gameObject.SetActive(false);
             Debug.Log("Collected a Coconut!");
-            AudioManager.Instance.PlaySound(coconutSound);
+            PlayIfAudioManager(coconutSound);
 
         } else if (other.gameObject.CompareTag("BananaPeel"))
         {

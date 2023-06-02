@@ -53,7 +53,7 @@ public class EnemyController : MonoBehaviour
             foreach (Collider player in hitPlayers)
             {
                 HealthController playerController = player.GetComponent<HealthController>();
-                Debug.Log("Kicking the player: " + player + " " + playerController);
+                // Debug.Log("Kicking the player: " + player + " " + playerController);
                 if (playerController != null)
                 {
                     playerController.TakeDamage(kickDamage);

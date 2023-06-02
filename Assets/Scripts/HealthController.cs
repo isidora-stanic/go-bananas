@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /// <summary>
 /// Class <c>HealthController</c> manages health, healing, taking damage and diying of a character.
@@ -16,6 +17,12 @@ public class HealthController : MonoBehaviour
     [SerializeField] private float health = 100f;
     [SerializeField] private float healAmount = 1f;
     [SerializeField] private float healSpeed = 5f;
+
+    [Header("Health bar")]
+    [SerializeField] private Image healtBarSprite;
+    [SerializeField] private Canvas healtBarCanvas;
+    [SerializeField] private GameObject deactivateWhenDead;
+
 
     [Header("Special indicators")]
     [SerializeField] private TypeOfCharacter characterType;
@@ -34,10 +41,12 @@ public class HealthController : MonoBehaviour
     {
         if (indestructible) return;
         health -= damage;
-        Debug.Log("OUCH");
+        // Debug.Log("OUCH");
+        if (health > 0f) UpdateHealthBarSprite();
         if (health <= 0f)
         {
             health = 0f; // so it does not display negative value
+            UpdateHealthBarSprite();
             Die();
         }
         if (characterType == TypeOfCharacter.Main)
@@ -59,7 +68,7 @@ public class HealthController : MonoBehaviour
             Debug.Log("Enemy just died.");
         else Debug.Log("Side character just died.");
 
-        gameObject.SetActive(false);
+        deactivateWhenDead.SetActive(false);
         // some kind of restart
     }
 
@@ -73,6 +82,8 @@ public class HealthController : MonoBehaviour
             if (health < maximumHealth)
             {
                 health += healAmount;
+                if (health > maximumHealth) health = maximumHealth;
+                UpdateHealthBarSprite();
                 // Debug.Log("Healing. Current health: " + health);
             }
             yield return new WaitForSeconds(healSpeed);
@@ -121,5 +132,20 @@ public class HealthController : MonoBehaviour
             Invoke("SetIndestructibleFalse", indestructibleTime);
             Debug.Log("Im not immortal! " + !indestructible);
         }
+    }
+
+
+    public void UpdateHealthBarSprite()
+    {
+        if (healtBarSprite != null)
+            healtBarSprite.fillAmount = health / maximumHealth;
+    }
+
+    void Update()
+    {
+        if (healtBarCanvas != null)
+        {
+            healtBarCanvas.transform.rotation = Quaternion.LookRotation(healtBarCanvas.transform.position - Camera.main.transform.position);
+        }       
     }
 }
