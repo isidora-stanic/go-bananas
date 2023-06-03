@@ -124,6 +124,9 @@ namespace StarterAssets
 
         private bool _hasAnimator;
 
+    // audio manager
+        private AudioManager audioManager;
+
         private bool IsCurrentDeviceMouse
         {
             get
@@ -144,7 +147,11 @@ namespace StarterAssets
             {
                 _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
             }
+
+            audioManager = GameObject.FindGameObjectsWithTag("Audio")[0].GetComponent<AudioManager>();
         }
+
+        
 
         private void Start()
         {
@@ -425,7 +432,7 @@ namespace StarterAssets
         {
             try 
                 {
-                    AudioManager.Instance.PlaySound(clip);
+                    audioManager.PlaySound(clip);
                 } 
             catch 
                 {

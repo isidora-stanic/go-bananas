@@ -80,8 +80,12 @@ public class AllMenusManager : Singleton<AllMenusManager>
 
     public void LoadMainMenu()
     {
-        // SwitchCanvas(CanvasType.MainMenu);
         TransitionScene(0);
+    }
+
+    public void LoadMainMenuSwitch()
+    {
+        SwitchCanvas(CanvasType.MainMenu);
     }
 
     public void LoadGameUI()
@@ -92,15 +96,15 @@ public class AllMenusManager : Singleton<AllMenusManager>
     public void LoadWinScreen()
     {
         SwitchCanvas(CanvasType.WinScreen);
-        Time.timeScale = 0f;
-        Invoke("LoadMainMenu", 10f);
+        // Time.timeScale = 0f;
+        // Invoke("LoadMainMenu", 10f);
     }
 
     public void LoadLoseScreen()
     {
         SwitchCanvas(CanvasType.LoseScreen);
-        Time.timeScale = 0f;
-        Invoke("LoadMainMenu", 10f);
+        // Time.timeScale = 0f;
+        // Invoke("LoadMainMenu", 10f);
     }
 
     public void PauseGame()
@@ -122,6 +126,7 @@ public class AllMenusManager : Singleton<AllMenusManager>
     public void RestartLevel()
     {
         Time.timeScale = 1f;
+        Debug.Log("Restarting!" + Time.timeScale);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

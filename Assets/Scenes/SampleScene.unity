@@ -1976,7 +1976,7 @@ GameObject:
   - component: {fileID: 810921513}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3544,7 +3544,7 @@ GameObject:
   - component: {fileID: 1497271612}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: Audio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4323,7 +4323,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 810921513}
         m_TargetAssemblyTypeName: AllMenusManager, Assembly-CSharp
-        m_MethodName: LoadMainMenu
+        m_MethodName: LoadMainMenuSwitch
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

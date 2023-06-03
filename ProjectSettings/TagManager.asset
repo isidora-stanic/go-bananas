@@ -10,6 +10,8 @@ TagManager:
   - WhipCream
   - Bolt
   - Coin
+  - Canvas
+  - Audio
   layers:
   - Default
   - TransparentFX

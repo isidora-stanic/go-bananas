@@ -8,6 +8,13 @@ public class BasicRigidBodyPush : MonoBehaviour
 
 	public AudioClip RockRollSoundClip;
 
+	private AudioManager audioManager;
+
+	protected void Awake()
+	{
+		audioManager = GameObject.FindGameObjectsWithTag("Audio")[0].GetComponent<AudioManager>();
+	}
+
 	private void OnControllerColliderHit(ControllerColliderHit hit)
 	{
 		if (canPush) PushRigidBodies(hit);
@@ -44,7 +51,7 @@ public class BasicRigidBodyPush : MonoBehaviour
 	{
 		try 
 			{
-				AudioManager.Instance.PlaySound(clip);
+				audioManager.PlaySound(clip);
 			} 
 		catch 
 			{

@@ -23,6 +23,13 @@ public class CollectingController : MonoBehaviour
     private StarterAssets.ThirdPersonController moveController;
 
     public TMP_Text coconutText, bananaPeelText, coinText;
+
+    private AudioManager audioManager;
+
+	protected void Awake()
+	{
+		audioManager = GameObject.FindGameObjectsWithTag("Audio")[0].GetComponent<AudioManager>();
+	}
     void Start()
     {
         healthController = gameObject.GetComponent<HealthController>();
@@ -81,7 +88,7 @@ public class CollectingController : MonoBehaviour
     {
         try 
             {
-                AudioManager.Instance.PlaySound(clip);
+                audioManager.PlaySound(clip);
             } 
         catch 
             {
