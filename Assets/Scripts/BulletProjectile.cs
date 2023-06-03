@@ -10,9 +10,15 @@ public class BulletProjectile : MonoBehaviour
     [SerializeField] private float projectileDamage;
     [SerializeField] private LayerMask enemyLayer;
 
+
+    [SerializeField] private AudioClip[] projectileLaunchSound, projectileHitSound;
+    private AudioManager audioManager;
+
     private void Awake()
     {
         bulletRigidbody = GetComponent<Rigidbody>();
+        audioManager = GameObject.FindGameObjectsWithTag("Audio")[0].GetComponent<AudioManager>();
+        PlayIfAudioManager(projectileLaunchSound);
     }
 
     void Start()
@@ -22,27 +28,29 @@ public class BulletProjectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // TODO: get the layer, do the damage (this method or OnCollisionEnter)
         Destroy(gameObject, autoDestructionTimeAfterHit); // destroying bullet
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        foreach (ContactPoint contact in collision.contacts)
-        {
-            // Debug.Log("contact info: " + contact.point + " " + contact.normal);
-        }
-        // Debug.Log("first: " + collision.collider + ", second: " + collision.collider);
-        // Debug.Log("second layer: " + collision.collider.gameObject.layer);
         Collider other = collision.collider;
-        // if (collision.relativeVelocity.magnitude > 2)
-        //     audioSource.Play();
         HealthController enemyController = other.GetComponent<HealthController>();
-        // Debug.Log("Enemy: " + other + " " + enemyController);
         if (enemyController != null)
         {
             enemyController.TakeDamage(projectileDamage);
-            Debug.Log("BAAAM");
+            PlayIfAudioManager(projectileHitSound);
         }
+    }
+
+    public void PlayIfAudioManager(AudioClip[] clip)
+    {
+        try 
+            {
+                audioManager.PlayRandomSound(clip);
+            } 
+        catch 
+            {
+                Debug.Log("There is no audio manager");
+            }
     }
 }

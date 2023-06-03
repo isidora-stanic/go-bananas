@@ -16,7 +16,7 @@ public enum CanvasType
 
 public class AllMenusManager : Singleton<AllMenusManager>
 {
-    [SerializeField] private GameObject pauseGamePanel;//, pauseButton;
+    [SerializeField] private GameObject pauseGamePanel;
     [SerializeField] private bool isLevel = false;
     private List<CanvasController> canvasControllerList;
     private CanvasController lastActiveController;
@@ -24,7 +24,6 @@ public class AllMenusManager : Singleton<AllMenusManager>
     protected override void Awake()
     {
         canvasControllerList = GetComponentsInChildren<CanvasController>().ToList();
-        // canvasControllerList.ForEach(x => x.gameObject.SetActive(false));
         if (isLevel) SwitchCanvas(CanvasType.GameUI);
         else SwitchCanvas(CanvasType.MainMenu);
     }
@@ -37,11 +36,6 @@ public class AllMenusManager : Singleton<AllMenusManager>
 
     public void SwitchCanvas(CanvasType _type)
     {
-        // if (lastActiveController != null)
-        // {
-        //     lastActiveController.gameObject.SetActive(false);
-        //     Debug.Log("Turned off " + lastActiveController.canvasType);
-        // }
         canvasControllerList.ForEach(x => x.gameObject.SetActive(false));
         CanvasController desiredCanvas = canvasControllerList.Find(x => x.canvasType == _type);
         if (desiredCanvas != null)
@@ -97,44 +91,37 @@ public class AllMenusManager : Singleton<AllMenusManager>
     {
         SwitchCanvas(CanvasType.WinScreen);
         // Time.timeScale = 0f;
-        // Invoke("LoadMainMenu", 10f);
     }
 
     public void LoadLoseScreen()
     {
         SwitchCanvas(CanvasType.LoseScreen);
         // Time.timeScale = 0f;
-        // Invoke("LoadMainMenu", 10f);
     }
 
     public void PauseGame()
     {
-        Debug.Log("PAUSED!");
         Time.timeScale = 0.0f;
         SwitchCanvas(CanvasType.PauseMenu);
-        //pauseButton.SetActive(false);
     }
 
     public void Resume()
     {
-        Debug.Log("RESUMED!");
         Time.timeScale = 1.0f;
         SwitchCanvas(CanvasType.GameUI);
-        //pauseButton.SetActive(true);
     }
 
     public void RestartLevel()
     {
         Time.timeScale = 1f;
-        Debug.Log("Restarting!" + Time.timeScale);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ExitGame()
     {
-        #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-        #endif
+        // #if UNITY_EDITOR
+        // UnityEditor.EditorApplication.isPlaying = false;
+        // #endif
         Application.Quit();
     }
 
