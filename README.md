@@ -3,6 +3,8 @@ Projekat za predmet Proces razvoja računarskih igara 2022/23
 
 Autor: Isidora Stanić, R2 15/2022
 
+## Trailer
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/buxRiGtgXJc/0.jpg)](https://www.youtube.com/watch?v=buxRiGtgXJc)
 
 ## Osnovne informacije
 | Glavni lik | Nana boy |
