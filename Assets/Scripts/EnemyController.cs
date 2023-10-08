@@ -15,10 +15,22 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField] private float kickDamage = 20f;
     [SerializeField] private float kickRadius = 40f;
+    [SerializeField] private float detectRadius = 10f;
     [SerializeField] private LayerMask playerLayer;
 
     private int _nextPointIndex;
     private float _range = 1.0f;
+
+    // animation
+    private Animator _animator;
+    private int _animIDSpeed;
+    // private bool _hasAnimator;
+
+    private void Awake()
+    {
+        _animator = GetComponentInChildren<Animator>();
+        AssignAnimationIDs();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -26,24 +38,45 @@ public class EnemyController : MonoBehaviour
             _nextPointIndex = 0;
     }
 
-    private void Move()
+    private void Move(GameObject player = null)
     {
+        if (player != null)
+        {
+            _animator.SetFloat(_animIDSpeed, speed);
+            enemyMesh.LookAt(player.transform);
+            enemyMesh.Translate(Vector3.forward * speed * Time.deltaTime);
+            return;
+        }
+
+        _animator.SetFloat(_animIDSpeed, speed);
+        
         enemyMesh.LookAt(wayPoints[_nextPointIndex]); // rotira ga da gleda u sledeci collectable
         enemyMesh.Translate(Vector3.forward * speed * Time.deltaTime); // kreni tamo gde si okrenut
 
         if (Vector3.Distance(enemyMesh.position, wayPoints[_nextPointIndex].position) < _range)
         {
-            _nextPointIndex++;
-            if (_nextPointIndex >= wayPoints.Count)
-            {
-                _nextPointIndex = 0;
-            }
+            GoToNextPosition();
+        }
+    }
+
+    private void GoToNextPosition()
+    {
+        _nextPointIndex++;
+        if (_nextPointIndex >= wayPoints.Count)
+        {
+            _nextPointIndex = 0;
         }
     }
 
     void Update()
     {
-        //currently does not move
+        // move towards a player if in radius
+        Collider[] players = IsPlayerInRange();
+        if (players.Length > 0)
+        {
+            Move(players[0].gameObject);
+        } else Move();
+        
 
         // KICK
         if (kickTimer <= 0)
@@ -67,5 +100,16 @@ public class EnemyController : MonoBehaviour
             // Debug.Log("NOT KICKING! " + kickTimer);
         }
 
+    }
+
+    private void AssignAnimationIDs()
+    {
+        _animIDSpeed = Animator.StringToHash("Speed");
+    }
+
+    private Collider[] IsPlayerInRange()
+    {
+        Collider[] hitPlayers = Physics.OverlapSphere(enemyMesh.position, detectRadius, playerLayer);
+        return hitPlayers;
     }
 }
