@@ -10137,170 +10137,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1001 &1260928204
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1936442943689039448, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: RockRollSoundClip
-      value: 
-      objectReference: {fileID: 8300000, guid: a4b80dd397792044d8058d1767f1d5f1, type: 3}
-    - target: {fileID: 3140191707397878894, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: healtBarSprite
-      value: 
-      objectReference: {fileID: 644152556}
-    - target: {fileID: 3140191707397878894, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: indestructible
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3140191707397878894, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: deactivateWhenDead
-      value: 
-      objectReference: {fileID: 8520757444538157156}
-    - target: {fileID: 3140191707397878894, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: indestructibleTime
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986661840154037672, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: field of view
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986661840154037672, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: far clip plane
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986661840154037679, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.2544861
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986661840154037679, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.11408043
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986661840154037679, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -7.1167393
-      objectReference: {fileID: 0}
-    - target: {fileID: 5002381796453794479, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: coinText
-      value: 
-      objectReference: {fileID: 1987626795}
-    - target: {fileID: 5002381796453794479, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: coconutText
-      value: 
-      objectReference: {fileID: 1580598559}
-    - target: {fileID: 5002381796453794479, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: bananaPeelText
-      value: 
-      objectReference: {fileID: 147371663}
-    - target: {fileID: 5377322611840706095, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: kickSound.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5377322611840706095, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: kickSound.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 28bfc5b7bbaff9f47b006476b0263d84, type: 3}
-    - target: {fileID: 5436932298990588400, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: m_Name
-      value: NanaBoy kick shoot collect sound
-      objectReference: {fileID: 0}
-    - target: {fileID: 5436932298990588407, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5436932298990588407, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 299.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 5436932298990588407, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 11.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 5436932298990588407, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 33.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 5436932298990588407, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5436932298990588407, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5436932298990588407, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5436932298990588407, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5436932298990588407, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5436932298990588407, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5436932298990588407, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6327199763004040832, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -7.1167393
-      objectReference: {fileID: 0}
-    - target: {fileID: 8520757445459342499, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: SuperSpeed
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 8520757445459342499, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: superFastTime
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8520757445459342499, guid: d44ff355a5c2fec4d81e168973202fe5,
-        type: 3}
-      propertyPath: RotationSmoothTime
-      value: 0.3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d44ff355a5c2fec4d81e168973202fe5, type: 3}
 --- !u!1001 &1279714716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20544,6 +20380,95 @@ Transform:
   m_Father: {fileID: 1357821563777104538}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3738843683356710258
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1762940715241528784, guid: 60688845d615fe2469945493b30da3e2,
+        type: 3}
+      propertyPath: healtBarSprite
+      value: 
+      objectReference: {fileID: 644152556}
+    - target: {fileID: 8543061553968769809, guid: 60688845d615fe2469945493b30da3e2,
+        type: 3}
+      propertyPath: coinText
+      value: 
+      objectReference: {fileID: 1987626795}
+    - target: {fileID: 8543061553968769809, guid: 60688845d615fe2469945493b30da3e2,
+        type: 3}
+      propertyPath: coconutText
+      value: 
+      objectReference: {fileID: 1580598559}
+    - target: {fileID: 8543061553968769809, guid: 60688845d615fe2469945493b30da3e2,
+        type: 3}
+      propertyPath: bananaPeelText
+      value: 
+      objectReference: {fileID: 147371663}
+    - target: {fileID: 8687680744991373385, guid: 60688845d615fe2469945493b30da3e2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687680744991373385, guid: 60688845d615fe2469945493b30da3e2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 299.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687680744991373385, guid: 60688845d615fe2469945493b30da3e2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687680744991373385, guid: 60688845d615fe2469945493b30da3e2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 33.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687680744991373385, guid: 60688845d615fe2469945493b30da3e2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687680744991373385, guid: 60688845d615fe2469945493b30da3e2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687680744991373385, guid: 60688845d615fe2469945493b30da3e2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687680744991373385, guid: 60688845d615fe2469945493b30da3e2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687680744991373385, guid: 60688845d615fe2469945493b30da3e2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687680744991373385, guid: 60688845d615fe2469945493b30da3e2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687680744991373385, guid: 60688845d615fe2469945493b30da3e2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687680744991373390, guid: 60688845d615fe2469945493b30da3e2,
+        type: 3}
+      propertyPath: m_Name
+      value: NanaBoy kick shoot collect sound
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 60688845d615fe2469945493b30da3e2, type: 3}
 --- !u!33 &4840623965269517376
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -21458,9 +21383,9 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8520757444538157156 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8520757445459342504, guid: d44ff355a5c2fec4d81e168973202fe5,
+  m_CorrespondingSourceObject: {fileID: 5034115385444982038, guid: 60688845d615fe2469945493b30da3e2,
     type: 3}
-  m_PrefabInstance: {fileID: 1260928204}
+  m_PrefabInstance: {fileID: 3738843683356710258}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8609021549093091351
 GameObject:
