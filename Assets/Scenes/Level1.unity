@@ -9125,7 +9125,7 @@ PrefabInstance:
     - target: {fileID: 5340394167593352578, guid: 28682aab07ce4834e884aa69d69523e4,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8932718754664261294, guid: 28682aab07ce4834e884aa69d69523e4,
         type: 3}
@@ -13925,7 +13925,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1619452060}
         m_TargetAssemblyTypeName: AllMenusManager, Assembly-CSharp
-        m_MethodName: RestartLevel
+        m_MethodName: LoadNextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18486,7 +18486,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PLAY AGAIN?
+  m_text: CONTINUE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea9e74ddedcfd7049a96846ed91fe870, type: 2}
   m_sharedMaterial: {fileID: 3770834268037951142, guid: ea9e74ddedcfd7049a96846ed91fe870,

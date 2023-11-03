@@ -77,6 +77,12 @@ public class AllMenusManager : Singleton<AllMenusManager>
         TransitionScene(0);
     }
 
+    public void LoadNextLevel()
+    {
+        TransitionScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+
     public void LoadMainMenuSwitch()
     {
         SwitchCanvas(CanvasType.MainMenu);
